@@ -1,0 +1,25 @@
+hello world
+
+<%= Time.now %><br />
+
+There are <strong><%= User.count %></strong> users in the database<br />
+<% @user.each do |user| %>
+    <div>
+        Person: <%= user.name %>
+    </div>
+
+<% end %>
+
+<% @comment.each do |comment| %>
+    <div>
+        Comment: <%= comment.body %>
+    </div>
+
+<% end %>
+  <% @person_id.comments.each do |comment| %>
+    <%= link_to @person_id.name, user_path(comment.user_id) %> said
+    <%= comment.body %>
+  <% end %>
+
+
+

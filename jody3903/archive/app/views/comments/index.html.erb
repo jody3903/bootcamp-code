@@ -1,0 +1,36 @@
+
+
+
+<h2> All Comments</h2>
+
+<% @comments.each do |comment| %>
+
+    <div>
+
+        <%= comment.body %>
+
+        <br />
+
+        by <%= comment.user.name %> (<%= comment.user.id %>)
+
+        </div>
+
+<% end %>
+
+<hr>
+
+<h2> New Comment </h2>
+
+    <%= form_for Comment.new do |f| %>
+        <%= f.text_field :body %>
+        <%= f.submit %>
+    <% end %>
+<hr>
+
+
+<h2>Log In </h2>
+<%= form_for User.new do |f| %>
+
+<%= f.text_field :name %>
+<%= f.submit %>
+<% end %>

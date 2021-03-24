@@ -1,0 +1,19 @@
+hello world
+
+<%= Time.now %><br />
+
+There are <strong><%= Chat.count %></strong> topics in the database<br />
+
+<% Chat.all.each do |chat| %>
+    <i><%= chat.topic %></i> is a popular topic.<br />
+<% end %>
+<% Message.all.each do |message| %>
+<i><%= message.comment %>
+<% end %> 
+<%# <% Messages.all.each do |message| %>
+    <%# <i><%= message.body %>
+<%# <% end %> 
+<%= form_for Chat.new do |f| %>
+    <%= f.text_field :topic %>
+    <%= f.submit %>
+<% end %>

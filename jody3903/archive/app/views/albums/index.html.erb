@@ -1,0 +1,27 @@
+<h2 style="font-family:sans-serif; font-weight:500;">Albums</h2>
+
+<% if @albums.empty? %>
+    <p style="font-family:sans-serif;">There aren't any albums to display</p>
+<% end %>
+
+<% @albums.each do |album| %>
+    <div style="font-family:sans-serif">
+        <%= album.name %> is by <%= album.artist_name %>  
+        <%= link_to "View #{album.songs.count}", album_path(album) %> 
+        
+    </div>
+<% end %>
+
+<div>
+<p style="font-family:sans-serif;">Add an Album!</p>
+</div>
+<%= form_for Album.new do |f| %>
+    <div>
+    <%= f.text_field :name, placeholder: "Album" %> 
+    <%= f.text_field :artist_name, placeholder: "Artist" %> 
+    </div>
+
+    <div>
+    <%= f.submit %>
+    <div>
+<% end %>

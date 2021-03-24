@@ -1,0 +1,20 @@
+hello world
+
+<%= Time.now %>
+
+There are <%= Car.count %> cars in the database
+
+The name is <%= @first_name %>
+
+<% Car.all.each do |car| %>
+    <%= car.model %> is made by <%= car. make %> and I love it
+<% end %>
+
+<%= link_to "link text" , "/" %>
+
+<%= form_for Car.new do |f| %>
+    <%= f.text_field :make %>
+    <%= f.text_field :model %>
+    <%= f.submit %>
+<% end %>
+
